@@ -2,10 +2,12 @@
 module Main
   class MainController < Volt::ModelController
     def index
+      # `res.popup({ position: 'bottom center', delay: {show: 200, hide: 50} })`
     end
 
     def index_ready
-      `$('.menu .popup').popup({position: 'bottom center', delay: {show: 200, hide: 50}})`
+      nodes = self.dom_nodes
+      `console.log(nodes)`
     end
 
     def about

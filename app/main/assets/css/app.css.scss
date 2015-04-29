@@ -1,1 +1,70 @@
-// Place your apps css here
+#scrummy {
+  margin-top: 35px;
+}
+
+#scrummy .container {
+  position: relative;
+  width: 915px;
+  margin: 0px auto;
+}
+
+@media only screen and (max-width : 600px) {
+  #scrummy > .pusher > .footer {
+    padding: 1em 0em;
+  }
+  #scrummy .container {
+    width: auto;
+    margin: 0em 1rem;
+  }
+  #scrummy .footer .container {
+    margin: 0em;
+  }
+}
+
+@media only screen and (min-width : 600px) and (max-width : 998px) {
+  #scrummy .container {
+    width: auto;
+    margin: 0em 2rem;
+  }
+}
+
+@media only screen and (max-width : 998px) {
+
+  #scrummy > .pusher {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+  #scrummy > .pusher > .full.height {
+    display: block;
+    height: auto;
+  }
+}
+
+@media only screen and (min-width : 998px) {
+  #scrummy .container {
+    right: 110px;
+  }
+}
+
+@media only screen and (min-width : 998px) and (max-width: 1200px) {
+  #scrummy .container {
+    width: 680px;
+    right: 75px;
+    margin: 0em auto;
+  }
+}
+
+@media only screen and (min-width : 1200px) and (max-width: 1355px) {
+  #scrummy .container {
+    width: 765px;
+    right: 128px;
+    margin: 0em auto;
+  }
+}
+
+@media only screen and (min-width : 1355px) {
+  #scrummy .container {
+    width: 850px;
+  }
+}

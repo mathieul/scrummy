@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-gem 'volt', '0.9.0'
+gem 'volt', '0.9.1.pre3'
 
 gem 'volt-semantic_ui', github: 'mathieul/volt-semantic_ui', branch: 'master'
 
