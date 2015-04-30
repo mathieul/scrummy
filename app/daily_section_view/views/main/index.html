@@ -1,15 +1,15 @@
 <:Body>
-  {{ %w[Yesterday Today Blockers].each do |label| }}
+  {{ [['Yesterday', 'teal'], ['Today', 'blue'], ['Blockers', 'orange']].each do |pair| }}
   <div class="ui raised segment">
-    <div class="ui blue ribbon label">
-      {{ label  }}
-    </div>
-    <div class="ui icon button">
-      <i class="write icon"></i>
+    <div class="ui {{ pair.last  }} ribbon label">{{ pair.first  }}</div>
+    <div class="ui right internal attached rail">
+      <div class="ui icon button right floated">
+        <i class="write icon"></i>
+      </div>
     </div>
 
     <div class="ui divided list">
-      {{ (1..(label.length)).to_a.each do |index| }}
+      {{ (1..(pair.first.length)).to_a.each do |index| }}
       <div class="item">
         <i class="right triangle icon"></i>
         <div class="content">
