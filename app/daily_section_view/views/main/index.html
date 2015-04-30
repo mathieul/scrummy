@@ -1,0 +1,19 @@
+<:Body>
+  {{ %w[Yesterday Today Blockers].each do |label| }}
+  <div class="ui raised segment">
+    <div class="ui blue ribbon label">
+      {{ label  }}
+    </div>
+
+    <div class="ui list">
+      {{ (1..(label.length)).to_a.each do |index| }}
+      <div class="item">
+        <i class="right triangle icon"></i>
+        <div class="content">
+          investigated can't hang-up calls #{{ index }}
+        </div>
+      </div>
+      {{ end  }}
+    </div>
+  </div>
+  {{ end  }}

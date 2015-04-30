@@ -2,26 +2,10 @@
   {{ view main_path, "title", {controller_group: 'main'} }}
 
 <:Body>
-  <div class="ui fixed inverted main menu">
-    <div class="container">
-      <div class="left item">
-        <strong>Scrummy</strong>
-      </div>
-      <div class="menu">
-        <a class="popup icon home item" data-content="Home page" href="/">
-          <i class="alternate home icon"></i>
-          Home
-        </a>
-        <a class="popup icon question item" data-content="About page" href="/about">
-          <i class="alternate question icon"></i>
-          About
-        </a>
-      </div>
-    </div>
-  </div>
+  <:scrummy_menu />
 
   <div class="pusher">
-    <div class="full height">
+    <div class="app-content full height">
       <div class="container">
         <:volt:notices />
 
@@ -29,14 +13,6 @@
       </div>
     </div>
 
-    <div class="ui inverted black footer vertical segment">
-      <div class="container">
-        <div class="ui stackable inverted divided relaxed grid">
-          <div class="sixteen wide column">
-            <p>&copy; Company {{ Time.now.year }}</p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <:scrummy_footer />
   </div>
 
