@@ -1,15 +1,15 @@
 <:Body>
-  {{ [['Yesterday', 'teal'], ['Today', 'blue'], ['Blockers', 'orange']].each do |pair| }}
-    <:section label="{{ pair.first }}" color="{{ pair.last }}" />
+  {{ [['Yesterday', 'teal'], ['Today', 'blue'], ['Blockers', 'orange']].each_with_index do |pair, index| }}
+    <:section label="{{ pair.first }}" color="{{ pair.last }}" index="{{ index }}" />
   {{ end  }}
 
 <:Section>
   <div class="ui raised segment">
     <div class="ui {{ attrs.color  }} ribbon label">{{ attrs.label  }}</div>
     <div class="ui right internal attached rail">
-      <div class="ui icon button right floated">
+      <a href="/daily/section/{{ attrs.index  }}/edit" class="ui icon button right floated">
         <i class="write icon"></i>
-      </div>
+      </a>
     </div>
 
     <div class="ui divided list">
