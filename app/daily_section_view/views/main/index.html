@@ -1,7 +1,11 @@
 <:Body>
   {{ [['Yesterday', 'teal'], ['Today', 'blue'], ['Blockers', 'orange']].each do |pair| }}
+    <:section label="{{ pair.first }}" color="{{ pair.last }}" />
+  {{ end  }}
+
+<:Section>
   <div class="ui raised segment">
-    <div class="ui {{ pair.last  }} ribbon label">{{ pair.first  }}</div>
+    <div class="ui {{ attrs.color  }} ribbon label">{{ attrs.label  }}</div>
     <div class="ui right internal attached rail">
       <div class="ui icon button right floated">
         <i class="write icon"></i>
@@ -9,16 +13,16 @@
     </div>
 
     <div class="ui divided list">
-      {{ (1..(pair.first.length)).to_a.each do |index| }}
-      <div class="item">
-        <i class="right triangle icon"></i>
-        <div class="content">
-          <p>
-            investigated can't hang-up calls #{{ index }}
-          </p>
-        </div>
-      </div>
+      {{ (1..(attrs.label.length)).to_a.each do |index| }}
+        <:task value="allo la terre?" index="{{ index }}" />
       {{ end  }}
     </div>
   </div>
-  {{ end  }}
+
+<:Task>
+  <div class="item">
+    <i class="right triangle icon"></i>
+    <div class="content">
+      <p>{{ attrs.value }} #{{ attrs.index  }}</p>
+    </div>
+  </div>
