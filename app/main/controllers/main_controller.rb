@@ -1,10 +1,6 @@
-# By default Volt generates this controller for your Main component
 module Main
   class MainController < Volt::ModelController
     def index
-    end
-
-    def edit
     end
 
     def about

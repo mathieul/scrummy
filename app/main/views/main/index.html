@@ -2,9 +2,6 @@
   Home
 
 <:Body>
-  {{ [['Yesterday', 'teal'], ['Today', 'blue'], ['Blockers', 'orange']].each_with_index do |pair, index| }}
-    <:daily_section_viewer label="{{ pair.first }}"
-                           color="{{ pair.last }}"
-                           index="{{ index }}"
-                           data-edit-url="{{ url_for(action: 'edit', section_id: index + 1) }}" />
-  {{ end  }}
+  <h1 class="ui header">Home</h1>
+
+  <p>Home page...</p>
