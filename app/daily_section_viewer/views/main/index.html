@@ -9,7 +9,7 @@
 
     <div class="ui divided list">
       {{ if model.daily_tasks.empty? }}
-        <:task value="NONE" />
+        <:empty_task />
       {{ end  }}
       {{ model.daily_tasks.each do |task| }}
         <:task value="{{ task.label }}" />
@@ -19,8 +19,16 @@
 
 <:Task>
   <div class="item">
-    <i class="right triangle icon"></i>
+    <i class="arrow right icon"></i>
     <div class="content">
       <p>{{ attrs.value }}</p>
+    </div>
+  </div>
+
+<:EmptyTask>
+  <div class="item">
+    <i class="arrow right icon"></i>
+    <div class="content ui label">
+      none
     </div>
   </div>

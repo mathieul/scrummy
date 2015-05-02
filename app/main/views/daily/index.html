@@ -2,6 +2,9 @@
   Home
 
 <:Body>
+  <div class="ui message yellow">
+    {{ pluralize model.count, "daily section" }}
+  </div>
   {{ model.each do |section| }}
     <:daily_section_viewer data-section="{{ section }}"
                            data-edit-url="{{ edit_url(section) }}" />
