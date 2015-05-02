@@ -1,9 +1,4 @@
 <:Body>
-  {{ [['Yesterday', 'teal'], ['Today', 'blue'], ['Blockers', 'orange']].each_with_index do |pair, index| }}
-    <:section label="{{ pair.first }}" color="{{ pair.last }}" index="{{ index }}" />
-  {{ end  }}
-
-<:Section>
   <div class="ui raised segment">
     <div class="ui {{ attrs.color  }} ribbon label">{{ attrs.label  }}</div>
     <div class="ui right internal attached rail">

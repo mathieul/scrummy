@@ -2,5 +2,6 @@
   Home
 
 <:Body>
-  <h1 class="ui header">Home</h1>
-  <:daily_section/>
+  {{ [['Yesterday', 'teal'], ['Today', 'blue'], ['Blockers', 'orange']].each_with_index do |pair, index| }}
+    <:daily_section_viewer label="{{ pair.first }}" color="{{ pair.last }}" index="{{ index }}" />
+  {{ end  }}

@@ -4,6 +4,9 @@ module Main
     def index
     end
 
+    def edit
+    end
+
     def about
     end
 
