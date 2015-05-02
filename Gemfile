@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 
-# gem 'volt', '0.9.1.pre3'
-gem 'volt', github: 'voltrb/volt', branch: 'master'
+gem 'volt', '0.9.1.pre3'
+# gem 'volt', github: 'voltrb/volt', branch: 'master'
 
 gem 'volt-semantic_ui', github: 'mathieul/volt-semantic_ui', branch: 'master'
 

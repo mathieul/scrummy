@@ -1,2 +1,32 @@
+<:Title>
+  {{ model.label }}
+
 <:Body>
-  TODO: {{ params._section_id }}
+  <form class="ui form" e-submit="add_task" role="form">
+    <h4 class="ui dividing header">{{ model.label }}</h4>
+    <div class="one field">
+      <div class="field">
+        <div class="ui grid">
+          <div class="thirteen wide column">
+            <input type="text" placeholder="Enter new task" autofocus value="{{ page._new_task!._label }}">
+          </div>
+          <div class="three wide column">
+            <button type="submit" class="circular blue ui icon button">
+              <i class="icon add"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div class="field">
+        <div class="ui divided list">
+          {{ model.daily_tasks.each do |task| }}
+            <div class="item">
+              <div class="content">
+                {{ task.label }}
+              </div>
+            </div>
+          {{ end }}
+        </div>
+      </div>
+    </div>
+  </form>
