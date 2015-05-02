@@ -1,10 +1,11 @@
 module Main
   class DailyController < Volt::ModelController
     def index
-      self.model = store._daily_sections.limit(100)#.order(position: 1)
+      self.model = store._daily_sections#.limit(100).sort(position: 1)
     end
 
-    def edit
+    def edit_url(section)
+      url_with(action: 'edit', section_id: section._id)
     end
   end
 end

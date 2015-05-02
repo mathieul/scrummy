@@ -3,7 +3,6 @@
 
 <:Body>
   {{ model.each do |section| }}
-    <:daily_section_viewer label="{{ section.label }}"
-                           color="{{ section.color }}"
-                           data-edit-url="{{ url_with(action: 'edit', section_id: 42) }}" />
+    <:daily_section_viewer data-section="{{ section }}"
+                           data-edit-url="{{ edit_url(section) }}" />
   {{ end  }}

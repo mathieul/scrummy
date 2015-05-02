@@ -1,6 +1,6 @@
 <:Body>
   <div class="ui raised segment">
-    <div class="ui {{ attrs.color  }} ribbon label">{{ attrs.label  }}</div>
+    <div class="ui {{ model.color }} ribbon label">{{ model.label }}</div>
     <div class="ui right internal attached rail">
       <a href="{{ attrs.data_edit_url  }}" class="ui icon button right floated">
         <i class="write icon"></i>
@@ -8,8 +8,11 @@
     </div>
 
     <div class="ui divided list">
-      {{ (1..(attrs.label.length)).to_a.each do |index| }}
-        <:task value="allo la terre?" index="{{ index }}" />
+      {{ if model.daily_tasks.empty? }}
+        <:task value="NONE" />
+      {{ end  }}
+      {{ model.daily_tasks.each do |task| }}
+        <:task value="{{ task.label }}" />
       {{ end  }}
     </div>
   </div>
@@ -18,6 +21,6 @@
   <div class="item">
     <i class="right triangle icon"></i>
     <div class="content">
-      <p>{{ attrs.value }} #{{ attrs.index  }}</p>
+      <p>{{ attrs.value }}</p>
     </div>
   </div>
