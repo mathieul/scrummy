@@ -8,9 +8,13 @@ module Main
       self.model = store._daily_sections.where(_id: params._section_id).fetch_first
     end
 
+    private
+
     def add_task
       if page._new_task._label.present?
-        model.daily_tasks << {label: page._new_task._label, position: model.daily_tasks.count + 1}
+        store._daily_tasks << { label: page._new_task._label,
+                                position: model.daily_tasks.count + 1,
+                                daily_section_id: model._id }
         page._new_task!._label = ''
       end
     end

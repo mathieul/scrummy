@@ -7,11 +7,15 @@
     <div class="one field">
       <div class="field">
         <div class="ui grid">
-          <div class="thirteen wide column">
-            <input type="text" placeholder="Enter new task" autofocus value="{{ page._new_task!._label }}">
+          <div class="fourteen wide column">
+            <input type="text"
+                   placeholder="Enter new task"
+                   value="{{ page._new_task!._label }}"
+                   autofocus
+                   required>
           </div>
-          <div class="three wide column">
-            <button type="submit" class="circular blue ui icon button">
+          <div class="two wide column">
+            <button type="submit" class="circular blue ui tiny icon button">
               <i class="icon add"></i>
             </button>
           </div>
@@ -22,7 +26,15 @@
           {{ model.daily_tasks.each do |task| }}
             <div class="item">
               <div class="content">
-                {{ task.label }}
+                <div class="ui grid">
+                  <div class="fourteen wide column">{{ task.label }}</div>
+                  <div class="two wide column">
+                    <a class="circular red ui tiny icon button"
+                       e-click="task.destroy">
+                      <i class="icon remove"></i>
+                    </a>
+                  </div>
+                </div>
               </div>
             </div>
           {{ end }}
