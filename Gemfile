@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.2'
+
 gem 'volt', '0.9.1.pre3'
 # gem 'volt', github: 'voltrb/volt', branch: 'master'
 
