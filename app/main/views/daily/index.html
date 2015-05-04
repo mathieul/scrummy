@@ -1,10 +1,11 @@
 <:Title>
   Daily
 
+<:Header>
+  <i class="calendar outline icon"></i>
+  Daily
+
 <:Body>
-  <div class="ui message purple">
-    {{ pluralize model.count, "daily section" }}
-  </div>
   {{ model.each do |section| }}
     <:daily_section_viewer data-section="{{ section }}"
                            data-edit-url="{{ edit_url(section) }}" />

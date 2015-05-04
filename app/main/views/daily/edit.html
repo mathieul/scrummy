@@ -1,6 +1,10 @@
 <:Title>
   {{ model.label }}
 
+<:Header>
+  <i class="calendar outline icon"></i>
+  Update Daily
+
 <:Body>
   <form class="ui form" e-submit="add_task" role="form">
     <h4 class="ui dividing header">{{ model.label }}</h4>
@@ -29,10 +33,10 @@
                 <div class="ui grid">
                   <div class="fourteen wide column">{{ task.label }}</div>
                   <div class="two wide column">
-                    <a class="circular red ui tiny icon button"
+                    <button class="circular red ui tiny icon button"
                        e-click="task.destroy">
                       <i class="icon remove"></i>
-                    </a>
+                    </button>
                   </div>
                 </div>
               </div>

@@ -26,5 +26,10 @@ module Main
     def pluralize(count, word)
       "#{count} #{count == 1 ? word : "#{word}s"}"
     end
+
+    def toggle_header
+      Element.find(".ui.header").toggle()
+      Element.find(".ui.message").toggle()
+    end
   end
 end
