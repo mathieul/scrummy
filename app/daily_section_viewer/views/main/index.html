@@ -1,20 +1,25 @@
 <:Body>
   <div class="ui raised segment">
-    <div class="ui {{ model.color }} ribbon label">{{ model.label }}</div>
-    <div class="ui right internal attached rail">
-      <a href="{{ attrs.data_edit_url  }}" class="ui icon button right floated">
-        <i class="write icon"></i>
-      </a>
-    </div>
+    {{ if model.loaded_state == 'loading' }}
+      <:loading />
+    {{ else }}
+      <div class="ui {{ model.color }} ribbon label">{{ model.label }}</div>
+      <div class="ui right internal attached rail">
+        <a href="{{ attrs.data_edit_url  }}" class="ui icon button right floated">
+          <i class="write icon"></i>
+        </a>
+      </div>
 
-    <div class="ui divided list">
-      {{ if model.daily_tasks.empty? }}
-        <:empty_task />
-      {{ end  }}
-      {{ model.daily_tasks.each do |task| }}
-        <:task value="{{ task.label }}" />
-      {{ end  }}
-    </div>
+      <div class="ui divided list">
+        {{ if model.daily_tasks.loaded_state == 'loading' }}<:loading />{{ end }}
+        {{ if model.daily_tasks.empty? }}
+          <:empty_task />
+        {{ end  }}
+        {{ model.daily_tasks.each do |task| }}
+          <:task value="{{ task.label }}" />
+        {{ end  }}
+      </div>
+    {{ end }}
   </div>
 
 <:Task>
@@ -31,4 +36,9 @@
     <div class="content ui label">
       none
     </div>
+  </div>
+
+<:Loading>
+  <div class="ui active inverted dimmer">
+    <div class="ui text loader">Loading</div>
   </div>
