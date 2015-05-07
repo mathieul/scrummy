@@ -1,4 +1,3 @@
-# Place your app's docs here.
+# Scrummy
 
-## New to Volt?
-Be sure to read the volt docs at http://docs.voltframework.com
+## TODO
