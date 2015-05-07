@@ -1,0 +1,8 @@
+<:Body>
+  {{ if notice_available? }}
+    <div class="ui message blue">Notice Available</div>
+  {{ else }}
+    <h2 class="ui header header-title">
+      {{ yield }}
+    </h2>
+  {{ end }}

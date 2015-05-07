@@ -7,10 +7,9 @@
   <div class="pusher">
     <div class="app-content full height">
       <div class="container">
-        <:notices />
-        <h2 class="ui header header-title" e-click="toggle_header">
+        <:header_notice>
           {{ view main_path, 'header', {controller_group: 'main'} }}
-        </h2>
+        </:header_notice>
 
         {{ view main_path, 'body', {controller_group: 'main'} }}
       </div>
