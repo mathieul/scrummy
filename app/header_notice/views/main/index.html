@@ -1,6 +1,28 @@
 <:Body>
   {{ if notice_available? }}
-    <div class="ui message blue">Notice Available</div>
+    {{ if page._reloading }}
+      <div class="ui message blue">Reloading...</div>
+    {{ elsif channel.status == :reconnecting }}
+      <div class="ui message yellow">
+        Connection Lost... {{ channel.error }}...
+        {{ if channel.reconnect_interval }}
+          Reconnecting in {{ (channel.reconnect_in / 1000.0).round }} sec
+        {{ end }}
+      </div>
+    {{ elsif page._reconnected }}
+      <div class="ui message green">Reconnected!</div>
+    {{ else }}
+      {{ flash.keys.each do |key| }}
+        {{ if flash.send(:"_#{key}").present? }}
+          <div class="ui message {{ color_for_flash_key(key) }}"
+               e-click="flash.clear">
+            {{ flash.send(:"_#{key}").each do |notice| }}
+              <p>{{ notice }}</p>
+            {{ end }}
+          </div>
+        {{ end }}
+      {{ end }}
+    {{end}}
   {{ else }}
     <h2 class="ui header header-title">
       {{ yield }}

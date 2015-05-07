@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 module HeaderNotice
-  describe MainController do#, type: :feature do
+  describe MainController do
     let(:controller) { MainController.new }
 
     before do
@@ -32,12 +32,14 @@ module HeaderNotice
       end
     end
 
-    # context "there are no notices" do
-    #   it "renders the header" do
-    #     visit '/'
+    describe "#color_for_flash_key" do
+      it "is green for successes" do
+        expect(controller.color_for_flash_key('successes')).to eq 'green'
+      end
 
-    #     expect(page).to have_content('test')
-    #   end
-    # end
+      it "is red for errors" do
+        expect(controller.color_for_flash_key('errors')).to eq 'red'
+      end
+    end
   end
 end if RUBY_PLATFORM != 'opal'
