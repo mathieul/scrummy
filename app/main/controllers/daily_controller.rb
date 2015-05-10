@@ -12,6 +12,11 @@ module Main
       self.model = store._daily_sections.where(_id: params._section_id).fetch_first
     end
 
+    def remove_task(task)
+      task.destroy
+      set_notice "task was deleted"
+    end
+
     private
 
     def add_task
