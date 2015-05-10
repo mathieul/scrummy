@@ -3,8 +3,6 @@
 client '/daily/sections', controller: 'daily', action: 'index'
 client '/daily/section/{{ section_id }}/edit', controller: 'daily', action: 'edit'
 
-client '/about', action: 'about'
-
 # Routes for login and signup, provided by user_templates component gem
 client '/signup', component: 'user_templates', controller: 'signup'
 client '/login', component: 'user_templates', controller: 'login'

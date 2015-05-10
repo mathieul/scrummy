@@ -7,9 +7,6 @@ module Main
     def index
     end
 
-    def about
-    end
-
     private
 
     def main_path
