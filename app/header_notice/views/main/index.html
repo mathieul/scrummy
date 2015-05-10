@@ -10,19 +10,16 @@
         {{ end }}
       </div>
     {{ elsif page._reconnected }}
-      <div class="ui message green">Reconnected!</div>
-    {{ else }}
-      {{ flash.keys.each do |key| }}
-        {{ if flash.send(:"_#{key}").present? }}
-          <div class="ui message {{ color_for_flash_key(key) }}"
-               e-click="flash.clear">
-            {{ flash.send(:"_#{key}").each do |notice| }}
-              <p>{{ notice }}</p>
-            {{ end }}
-          </div>
-        {{ end }}
-      {{ end }}
-    {{end}}
+      <div class="ui message purple">Reconnected!</div>
+    {{ elsif page._the_notice }}
+      <div class="ui message green">
+        <p>{{ page._the_notice }}</p>
+      </div>
+    {{ elsif page._the_error }}
+      <div class="ui message red">
+        <p>{{ page._the_error }}</p>
+      </div>
+    {{ end }}
   {{ else }}
     <h2 class="ui header header-title">
       {{ yield }}

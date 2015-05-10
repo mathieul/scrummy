@@ -4,29 +4,10 @@ module HeaderNotice
       return true if page._reloading
       return true if channel.status == :reconnecting
       return true if page._reconnected
+      return true if page._the_notice.present?
+      return true if page._the_error.present?
 
-      flash_present?
-    end
-
-    def color_for_flash_key(key)
-      case key
-      when 'notices'
-        'blue'
-      when 'successes'
-        'green'
-      when 'errors'
-        'red'
-      else
-        ''
-      end
-    end
-
-    private
-
-    def flash_present?
-      flash.keys.any? { |key|
-        flash[key].present?
-      }
+      false
     end
   end
 end

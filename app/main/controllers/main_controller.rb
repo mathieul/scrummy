@@ -1,7 +1,10 @@
+require 'controller_helpers'
+
 module Main
   class MainController < Volt::ModelController
+    include ControllerHelpers
+
     def index
-      flash._errors << "something went wrong"
     end
 
     def about

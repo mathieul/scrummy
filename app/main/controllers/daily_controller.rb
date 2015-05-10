@@ -1,5 +1,9 @@
+require 'controller_helpers'
+
 module Main
   class DailyController < Volt::ModelController
+    include ControllerHelpers
+
     def index
       self.model = store._daily_sections
     end
@@ -16,6 +20,7 @@ module Main
                                 position: model.daily_tasks.count + 1,
                                 daily_section_id: model._id }
         page._new_task!._label = ''
+        set_notice "task was added"
       end
     end
 

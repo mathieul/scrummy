@@ -1,3 +1,5 @@
+$LOAD_PATH << File.expand_path('../lib', __dir__)
+
 Volt.configure do |config|
   # Setup your global app config here.
 
