@@ -12,22 +12,6 @@ module Main
       self.model = store._daily_sections.where(_id: params._section_id).fetch_first
     end
 
-    def edit_ready
-      my_container = container
-      %x{
-        var found = jQuery(my_container).find('.ui .checkbox');
-        console.log("size: " + found.size() + " - found:", found);
-        if (found.size() > 0) {
-          found.checkbox();
-        }
-      }
-    end
-
-    def remove_task(task)
-      task.destroy
-      set_notice "task was deleted"
-    end
-
     private
 
     def add_task
@@ -46,11 +30,6 @@ module Main
 
     def pluralize(count, word)
       "#{count} #{count == 1 ? word : "#{word}s"}"
-    end
-
-    def toggle_header
-      Element.find(".ui.header").toggle()
-      Element.find(".ui.message").toggle()
     end
   end
 end

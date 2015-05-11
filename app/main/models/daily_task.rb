@@ -16,6 +16,18 @@ class DailyTask < Volt::Model
     set_field_at(:completed_time, value)
   end
 
+  def completed?
+    completed_time.present?
+  end
+
+  def not_completed!
+    self.completed_at = nil
+  end
+
+  def completed!
+    self.completed_at = Time.now
+  end
+
   private
 
   def field_at(name)
