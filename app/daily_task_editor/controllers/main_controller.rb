@@ -19,13 +19,5 @@ module DailyTaskEditor
       model.destroy
       set_notice "task was deleted"
     end
-
-    def toggle_completed
-      if model.completed?
-        model.not_completed!
-      else
-        model.completed!
-      end
-    end
   end
 end

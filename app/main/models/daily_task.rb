@@ -16,8 +16,20 @@ class DailyTask < Volt::Model
     set_field_at(:completed_time, value)
   end
 
-  def completed?
+  def completed?(dummy = nil)
     completed_time.present?
+  end
+
+  def marked_completed
+    completed?
+  end
+
+  def marked_completed=(checked)
+    if checked
+      completed!
+    else
+      not_completed!
+    end
   end
 
   def not_completed!

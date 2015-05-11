@@ -5,7 +5,7 @@
         <div class="fourteen wide column">
           <div class="inline field">
             <div class="ui toggle checkbox">
-              <input type="checkbox" e-click="toggle_completed" checked="{{ completed? }}">
+              <input type="checkbox" checked="{{ marked_completed }}">
             </div>
             <span class="{{ if completed? }}completed{{ end }}">{{ label }}</span>
           </div>
