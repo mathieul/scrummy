@@ -29,13 +29,22 @@
           {{ model.daily_tasks.each do |task| }}
             <div class="item">
               <div class="content">
-                <div class="ui grid">
-                  <div class="fourteen wide column">{{ task.label }}</div>
-                  <div class="two wide column">
-                    <button class="circular red ui tiny icon button"
-                            e-click="remove_task(task)">
-                      <i class="icon remove"></i>
-                    </button>
+                <div class="ui form">
+                  <div class="ui grid">
+                    <div class="fourteen wide column">
+                      <div class="inline field">
+                        <div class="ui slider checkbox">
+                          <input type="checkbox">
+                          {{ task.label }}
+                        </div>
+                      </div>
+                    </div>
+                    <div class="two wide column">
+                      <button class="circular red ui tiny icon button"
+                              e-click="remove_task(task)">
+                        <i class="icon remove"></i>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
