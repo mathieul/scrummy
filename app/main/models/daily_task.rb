@@ -20,15 +20,15 @@ class DailyTask < Volt::Model
     completed_time.present?
   end
 
-  def marked_completed
-    completed?
+  def marked_pending
+    !completed?
   end
 
-  def marked_completed=(checked)
+  def marked_pending=(checked)
     if checked
-      completed!
-    else
       not_completed!
+    else
+      completed!
     end
   end
 

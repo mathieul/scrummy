@@ -12,11 +12,9 @@
 
       <div class="ui divided list">
         {{ if model.daily_tasks.loaded_state == 'loading' }}<:loading />{{ end }}
-        {{ if model.daily_tasks.empty? }}
-          <:empty_task />
-        {{ end  }}
+        {{ if model.daily_tasks.empty? }}<:empty_task />{{ end  }}
         {{ model.daily_tasks.each do |task| }}
-          <:task value="{{ task.label }}" />
+          <:task value="{{ task.label }}" completed="{{ task.completed? }}" />
         {{ end  }}
       </div>
     {{ end }}
@@ -26,7 +24,7 @@
   <div class="item">
     <i class="arrow right icon"></i>
     <div class="content">
-      <p>{{ attrs.value }}</p>
+      <p class="{{ if attrs.completed }}task-completed{{ end }}">{{ attrs.value }}</p>
     </div>
   </div>
 
